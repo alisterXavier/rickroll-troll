@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body style="background-color: black;">
-    <video id="vid" autoplay="true" controls>
-        <source src="./Rick Astley - Never Gonna Give You Up (Official Music Video).mp4" type="video/mp4">
-    <script>
-        document.getElementById('vid').play();
-    </script>    
+  </head>
+  <body
+    style="
+      background-color: black;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 99vw;
+      height: 99vh;
+    "
+  >
+    <video id="vid" controls style="opacity: 0">
+      <source
+        src="./Rick Astley - Never Gonna Give You Up (Official Music Video).mp4"
+        type="video/mp4"
+      />
     </video>
-</body>
+    <button
+      onclick="play()"
+      id="btn"
+      style="
+        position: absolute;
+        cursor: pointer;
+        z-index: 1;
+        width: 250px;
+        height: 50px;
+        padding: 10px;
+        font-size: 20px;
+        border: 1px solid lime;
+        background-color: black;
+        color: white;
+      "
+    >
+      Go to home page
+    </button>
+    <script>
+      const play = () => {
+        const vid = document.getElementById('vid');
+        const btn = document.getElementById('btn');
+        btn.style.opacity = 0;
+        vid.style.opacity = 1;
+        vid.style.position = 'relative';
+        vid.play();
+        vid.requestFullscreen()
+      };
+    </script>
+  </body>
 </html>
