@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="width: 99vw; height: 99vh">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,16 +8,26 @@
   <body
     style="
       background-color: black;
-      position: absolute;
-      z-index: -1;
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 99vw;
-      height: 99vh;
+      width: 100%;
+      height: 100%;
+      margin: 0;
     "
   >
-    <video id="vid" controls style="opacity: 0">
+    <video
+      id="vid"
+      controls
+      style="
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+      "
+    >
       <source
         src="./Rick Astley - Never Gonna Give You Up (Official Music Video).mp4"
         type="video/mp4"
@@ -44,7 +54,7 @@
       <button
         onclick="play()"
         style="
-        border-radius: 5px;
+          border-radius: 5px;
           font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
             sans-serif;
           cursor: pointer;
